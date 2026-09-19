@@ -46,7 +46,7 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/deploy:${{ github.run_id }}
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/webapp-again:${{ github.run_id }}
 
   update-newtag-in-helm-chart:
     runs-on: ubuntu-latest
@@ -57,8 +57,8 @@ jobs:
         token: ${{ secrets.TOKEN }}
     - run: sed -i 's/tag: .*/tag: "${{ github.run_id }}"/' helm/go-web-app-again-chart/values.yaml
     - run: |
-        git config --global user.email "you@example.com"
-        git config --global user.name "Your Name"
+        git config --global user.email "aradhyath17@gmail.com"
+        git config --global user.name "Aradhya Tagalpallewar"
         git add helm/go-web-app-again-chart/values.yaml
         git commit -m "Update tag in Helm chart"
         git push origin HEAD:main
