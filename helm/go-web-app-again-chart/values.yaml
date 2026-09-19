@@ -3,4 +3,4 @@ replicaCount: 1
 image:
   repository: aradhyadocker17/webapp-again
   pullPolicy: IfNotPresent
-  tag: "v1"
+  tag: "35456617059"
