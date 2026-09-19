@@ -55,7 +55,8 @@ jobs:
     - uses: actions/checkout@v4
       with:
         token: ${{ secrets.TOKEN }}
-    - run: sed -i 's/tag: .*/tag: "${{ github.run_id }}"/' helm/go-web-app-again-chart/values.yaml
+    - run: |
+        sed -i 's/tag: .*/tag: "${{ github.run_id }}"/' helm/go-web-app-again-chart/values.yaml
     - run: |
         git config --global user.email "aradhyath17@gmail.com"
         git config --global user.name "Aradhya Tagalpallewar"
